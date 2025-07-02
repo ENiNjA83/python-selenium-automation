@@ -12,10 +12,8 @@ service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
-# open the url
-driver.get('https://www.amazon.com/')
 
-#1) PRACTICE WITH LOCATORS
+#1) PRACTICE WITH LOCATORS for these page elements of Amazon Sign in page:
 
 #Amazon logo, search by XPATH
 driver.find_element(By.XPATH, '//[@role="img"]')
