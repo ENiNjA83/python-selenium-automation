@@ -12,25 +12,27 @@ service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
-
 #1) PRACTICE WITH LOCATORS for these page elements of Amazon Sign in page:
+driver.get('https://www.amazon.com')
+driver.find_element(By.ID, 'nav-link-accountList').click()
 
 #Amazon logo, search by XPATH
-driver.find_element(By.XPATH, '//[@role="img"]')
+driver.find_element(By.XPATH, '//i[@role="img"]')
 #Email field, search by ID
 driver.find_element(By.ID, 'ap_email_login')
 #Continue button, search by ID
 driver.find_element(By.ID, 'continue')
 #Conditions of use, search by partial path using XPATH
-driver.find_element(By.XPATH, '//a[contains(@href, "ref=ap_signin_notification_condition_of_use")]')
+driver.find_element(By.XPATH, '//a[contains(@href, "notification_condition_of_use")]')
 #Privacy Notice link, search by partial match using XPATH
-driver.find_element(By.XPATH, '//a[contains(@href, "ref=ap_signin_notification_privacy_notice")]')
+driver.find_element(By.XPATH, '//a[contains(@href, "notification_privacy_notice")]')
 #Need help link, search by partial match using XPATH
 driver.find_element(By.XPATH, '//a[contains(@href, "ref=unified_claim_collection")]')
 ##"Forgot your password link" does not display on my page (see screenshot)
 ##"Other issues with Sign-in" does not display on the page (see screenshot)
 #Create a free Business account button, search by text using XPATH
-driver.find_element(By.XPATH, '//a[text()="Create a free Business account"]')
+driver.find_element(By.XPATH, '//a[@id="ab-registration-ingress-link"]')
+
 
 #2)Create a test case for the SignIn page using python & selenium script.
 #1. Open https://www.target.com/
